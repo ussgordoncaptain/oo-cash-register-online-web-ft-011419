@@ -4,7 +4,7 @@ class CashRegister
     @items = []
     @discount = discount
   end
-  attr_accessor :total
+  attr_accessor :total, :items, :discount
   def add_item(item, price,quantity=1)
     @items.push(item)
     @total+=price*quantity
