@@ -9,5 +9,6 @@ class CashRegister
     @items.push(item)
     @total+=price*quantity
   end
+  def apply_discount)
   
 end
