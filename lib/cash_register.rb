@@ -3,4 +3,5 @@ class CashRegister
     @total = 0 
   end
   attr_accessor :total
+  def s
 end
