@@ -4,14 +4,15 @@ class CashRegister
     @items = []
     @discount = discount
   end
-  attr_accessor :total, :items, :discount
+  attr_accessor :total, :items, :discount, :last_price
   def add_item(item, price,quantity=1)
     ii = 0
     while (ii<quantity)
       @items << item
       ii+=1
     end
-    @total+=price*quantity
+    @last_price = price*quantity
+    @total+= @last_price
   end
   def apply_discount
     if @discount==0 
@@ -21,6 +22,6 @@ class CashRegister
     return "After the discount, the total comes to $#{@total}."
   end
   def void_last_transaction
-    
+    @total -= last_price
   end
 end
