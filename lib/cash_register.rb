@@ -6,11 +6,12 @@ class CashRegister
   end
   attr_accessor :total, :items, :discount
   def add_item(item, price,quantity=1)
-   quantity.times do |x|
-    @items << item
-    @total+=price
-  end
-  return @total
+    ii = 0
+    while (ii<quantity)
+      @items << item
+      ii+=1
+    end
+    @total+=price*quantity
   end
   def apply_discount
     if @discount==0 
